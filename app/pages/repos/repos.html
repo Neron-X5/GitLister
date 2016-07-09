@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>Repos</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-searchbar placeholder="Search Repos" [(ngModel)]="repoSearch" [debounce]="700" (ionInput)="search($event)"></ion-searchbar>
+    <ion-list>
+        <button ion-item *ngFor="let repo of repos" (click)="goToDetails($event, repo)">
+            <!-- <ion-avatar item-left>
+                <img [src]="repo.owner.avatar_url">
+            </ion-avatar> -->
+            <!-- <h2 item-left>{{ repo.id }}</h2> -->
+            <h2>{{ repo.name }}</h2>
+            <ion-icon md="md-arrow-forward" item-right></ion-icon>
+            <p>{{ repo.description }}</p>
+        </button>
+    </ion-list>
+</ion-content>

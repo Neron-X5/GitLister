@@ -1,0 +1,6 @@
+{
+    "name": "GitLister",
+    "app_id": "com.neron.gitlister",
+    "v2": true,
+    "typescript": true
+}

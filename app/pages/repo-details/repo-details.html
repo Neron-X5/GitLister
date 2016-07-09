@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{repoData?.name | uppercase}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h3>Repository Details</h3>
+    <ion-card>
+        <ion-item>
+            <ion-avatar item-left>
+                <img [src]="repoData?.owner?.avatar_url">
+            </ion-avatar>
+            <a [href]="repoData?.owner?.html_url">
+                <button primary clear>{{repoData?.owner?.login}}</button>
+            </a>
+            <p>{{repoData?.owner?.type}}</p>
+        </ion-item>
+        <!-- <img src="img/advance-card-bttf.png"> -->
+        <ion-card-content>
+            <ion-label>{{repoData?.name}}</ion-label>
+            <p>{{repoData?.description}}</p>
+        </ion-card-content>
+        <ion-row>
+            <ion-col>
+                <button dark clear small>
+                    <ion-icon name="star"></ion-icon>
+                    <div>{{repoData?.stargazers_count}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button dark clear small>
+                    <ion-icon name="git-network"></ion-icon>
+                    <div>{{repoData?.forks_count}}</div>
+                </button>
+            </ion-col>
+            <a [href]="repoData?.html_url">
+                <ion-col>
+                    <button primary clear small>
+                        <ion-icon name="link"></ion-icon>
+                        <div>Github</div>
+                    </button>
+                </ion-col>
+            </a>
+        </ion-row>
+    </ion-card>
+</ion-content>
