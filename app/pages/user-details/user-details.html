@@ -3,7 +3,7 @@
         <button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>{{userDetail?.name || userData.login}}</ion-title>
+        <ion-title>{{userDetail?.name || userData.login | uppercase}}</ion-title>
     </ion-navbar>
 </ion-header>
 <ion-content padding>

@@ -1,21 +1,21 @@
 import { Component, ViewChild } from '@angular/core';
 import { ionicBootstrap, Platform, MenuController, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { UsersPage } from './pages/users/users';
 import { ReposPage } from './pages/repos/repos';
+import { UsersPage } from './pages/users/users';
 import { OrganizationsPage } from './pages/organizations/organizations';
 @Component({
     templateUrl: 'build/app.html',
 })
 class MyApp {
     @ViewChild(Nav) nav: Nav;
-    // make UsersPage the root (or first) page
-    rootPage: any = UsersPage;
+    // make ReposPage the root (or first) page
+    rootPage: any = ReposPage;
     pages: Array < { title: string, component: any } > ;
     constructor(private platform: Platform, private menu: MenuController) {
         this.initializeApp();
         // set our app's pages
-        this.pages = [{ title: 'Users', component: UsersPage }, { title: 'Repos', component: ReposPage }, { title: 'Organizations', component: OrganizationsPage }];
+        this.pages = [{ title: 'Repos', component: ReposPage }, { title: 'Users', component: UsersPage }, { title: 'Organizations', component: OrganizationsPage }];
     }
     initializeApp() {
         this.platform.ready().then(() => {

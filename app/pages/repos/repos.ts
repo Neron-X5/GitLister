@@ -17,12 +17,12 @@ export class ReposPage {
             // console.log(repos);
             this.repos = repos;
         });
-    }
+    };
     goToDetails(event, repo) {
         this.nav.push(RepoDetailsPage, {
             repo: repo
         });
-    }
+    };
     search(searchTerm) {
         let term = searchTerm.target.value;
         if(term) {
@@ -38,5 +38,5 @@ export class ReposPage {
         } else {
             this.githubRepos.load().then(repos => this.repos = repos);
         }
-    }
-}
+    };
+};

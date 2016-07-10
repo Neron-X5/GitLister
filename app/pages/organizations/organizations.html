@@ -7,5 +7,15 @@
     </ion-navbar>
 </ion-header>
 <ion-content padding>
-    <h3>Organizations view page</h3>
+    <!-- <ion-searchbar placeholder="Search Organizations" [(ngModel)]="organizationSearch" [debounce]="700" (ionInput)="search($event)"></ion-searchbar> -->
+    <ion-list>
+        <button ion-item *ngFor="let organization of organizations" (click)="goToDetails($event, organization)">
+            <ion-thumbnail item-left>
+                <img [src]="organization.avatar_url">
+            </ion-thumbnail>
+            <h2>{{ organization.login }}</h2>
+            <p>{{ organization.description }}</p>
+            <ion-icon md="md-arrow-forward" item-right></ion-icon>
+        </button>
+    </ion-list>
 </ion-content>

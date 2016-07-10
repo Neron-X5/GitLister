@@ -1,0 +1,63 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>{{organizationData?.name || organizationData?.login | uppercase}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h3>Organization Details</h3>
+    <ion-card>
+        <img [src]="organizationData?.avatar_url" />
+        <ion-card-content>
+            <ion-card-title>
+                {{organizationData?.company || organizationData?.name || organizationData?.login}}
+            </ion-card-title>
+            <p>{{organizationData?.description}}</p>
+        </ion-card-content>
+        <ion-list>
+            <button ion-item *ngIf="organizationData?.location">
+                <ion-icon name="pin" item-left></ion-icon>
+                {{organizationData?.location}}
+            </button>
+            <button ion-item *ngIf="organizationData?.email">
+                <ion-icon name="mail" item-left></ion-icon>
+                {{organizationData?.email}}
+            </button>
+            <a [href]="organizationData?.html_url" target="_system">
+                <button ion-item clear *ngIf="organizationData?.html_url">
+                    <ion-icon name="logo-github" item-left></ion-icon>
+                    GitHub Dashboard
+                </button>
+            </a>
+        </ion-list>
+        <ion-row>
+            <ion-col>
+                <button dark clear small>
+                    <!-- <ion-icon name="bookmarks"></ion-icon> -->
+                    <img src="img/git-repo.svg" padding-right>
+                    <div>{{organizationData?.public_repos}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button dark clear small>
+                    <img src="img/git-gist.svg" padding-right>
+                    <div>{{organizationData?.public_gists}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button primary clear small>
+                    <img src="img/git-organization.svg" padding-right>
+                    <div>{{organizationData?.followers}}</div>
+                </button>
+            </ion-col>
+            <ion-col>
+                <button primary clear small>
+                    <img src="img/git-person.svg" padding-right>
+                    <div>{{organizationData?.following}}</div>
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

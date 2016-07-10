@@ -12,7 +12,7 @@ export class RepoDetailsPage {
         this.repoData = navParams.get('repo');
         githubRepos.loadDetails(this.repoData.name, this.repoData.owner.login)
             .then(repo => {
-                console.log(repo);
+                // console.log(repo);
                 this.repoData = repo;
             });
     };

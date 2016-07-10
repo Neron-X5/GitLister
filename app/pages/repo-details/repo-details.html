@@ -13,7 +13,7 @@
             <ion-avatar item-left>
                 <img [src]="repoData?.owner?.avatar_url">
             </ion-avatar>
-            <a [href]="repoData?.owner?.html_url">
+            <a [href]="repoData?.owner?.html_url" target="_system">
                 <button primary clear>{{repoData?.owner?.login}}</button>
             </a>
             <p>{{repoData?.owner?.type}}</p>
@@ -26,20 +26,22 @@
         <ion-row>
             <ion-col>
                 <button dark clear small>
-                    <ion-icon name="star"></ion-icon>
+                    <!-- <ion-icon name="star"></ion-icon> -->
+                    <img src="img/git-star.svg" padding-right>
                     <div>{{repoData?.stargazers_count}}</div>
                 </button>
             </ion-col>
             <ion-col>
                 <button dark clear small>
-                    <ion-icon name="git-network"></ion-icon>
+                    <!-- <ion-icon name="git-network"></ion-icon> -->
+                    <img src="img/git-repo-forked.svg" padding-right>
                     <div>{{repoData?.forks_count}}</div>
                 </button>
             </ion-col>
-            <a [href]="repoData?.html_url">
+            <a [href]="repoData?.html_url" target="_system">
                 <ion-col>
                     <button primary clear small>
-                        <ion-icon name="link"></ion-icon>
+                        <ion-icon name="logo-github"></ion-icon>
                         <div>Github</div>
                     </button>
                 </ion-col>
